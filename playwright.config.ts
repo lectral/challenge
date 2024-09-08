@@ -10,6 +10,9 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+/* Handle Envs */
+const envHeadless = (process.env.HEADLESS === 'true' || process.env.HEADLESS === "1" ) ? true : false ;
+
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -34,8 +37,10 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    video: 'on-first-retry',
+
     // Disable headless mode
-    headless: true,
+    headless: envHeadless,
   },
 
   /* Configure projects for major browsers */
