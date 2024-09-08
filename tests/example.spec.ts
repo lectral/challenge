@@ -7,9 +7,10 @@ test.describe('Google Maps Search', () => {
   });
   
   test('should allow for searching when specific location is entered', async ({page, context, ui}) => {
-    await ui.maps.searchBar.fill('New York');
+    const expectedLocation = 'Paris';
+    await ui.maps.searchBar.fill(expectedLocation);
     await ui.maps.searchBar.triggerSearchByEnter();
-    await expect(ui.maps.sidebarSummary.headline).toHaveText('New York');
+    await ui.maps.sidebarSummary.assertHeadlineText(expectedLocation);
   });
 
 });
