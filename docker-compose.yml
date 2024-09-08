@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.47.0-noble
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
+    environment:
+      - CI=true
+    command: ["npx", "playwright", "test"]
