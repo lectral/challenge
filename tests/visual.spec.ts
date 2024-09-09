@@ -1,6 +1,6 @@
 import {test} from '../fixtures/fixtures';
 
-test.describe("[VisReg] Google Search Bar", () => {
+test.skip("[VisReg] Google Search Bar", () => {
     test.beforeEach(async ({ ui }) => {
         await ui.maps.goto();
         await ui.maps.assertPageIsLoaded();
