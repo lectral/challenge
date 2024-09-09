@@ -3,6 +3,8 @@ import { SearchBarComponent } from "../components/search-bar.component";
 import { BaseUI } from "./base.ui";
 import { SidebarDirectionsComponent } from "../components/sidebar-directions.component";
 import { SidebarSummaryComponent } from "../components/sidebar-summary.component";
+import { SidebarResultsComponent } from "../components/sidebar-results.component";
+
 
 export class MapsUI extends BaseUI {
 
@@ -13,6 +15,8 @@ export class MapsUI extends BaseUI {
     searchBar = new SearchBarComponent(this.page);
     sidebarSummary = new SidebarSummaryComponent(this.page);
     sidebarDirections = new SidebarDirectionsComponent(this.page);
+    sidebarResults = new SidebarResultsComponent(this.page);
+
 
     async assertPageIsLoaded() {
         await expect(this.searchBar.root).toBeVisible();

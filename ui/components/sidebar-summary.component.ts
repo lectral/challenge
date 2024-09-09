@@ -13,6 +13,15 @@ export class SidebarSummaryComponent extends BaseComponent {
   }
 
   async assertHeadlineText(expected: string): Promise<void> {
-    await expect(await this.headline.innerText()).toBe(expected);
+    // we could wait for proper request to finish here
+    // in case of google they are performing a lot of requests ;)
+    await this.page.waitForLoadState('networkidle')
+    await expect(this.headline).toContainText(expected);
   }
+
+  async assertErrorLocationNotFound(expected: string): Promise<void> {
+    // should contain text "Google Maps can't find location "expected"
+    await expect(this.root).toContainText(`Google Maps can't find ${expected}`);
+  }
+
 }
