@@ -14,7 +14,7 @@ To run the tests in Docker, use the following command:
   - Additional tests have also been included in this file.
 - A visual regression test has been created but is currently skipped in `visual.spec.ts`.
 
-### Additional Test Cases That Could Be Scripted:
+### Additional Test Cases
 - Use a list of valid locations (including diacritics, special characters, etc.) to verify if they are properly searched by the user and to check the returned coordinates (data-driven testing).
 - Verify if the search history is properly populated and displayed to the user.
 - Handle network error scenarios.
