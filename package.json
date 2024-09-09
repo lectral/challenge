@@ -7,5 +7,7 @@
     "@playwright/test": "^1.47.0",
     "@types/node": "^22.5.4"
   },
-  "scripts": {}
+  "scripts": {
+    "run:docker": "PW_UID=\"$(id -u)\" PW_GID=\"$(id -g)\" docker compose up --build --force-recreate"
+  }
 }
