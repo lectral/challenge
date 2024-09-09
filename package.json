@@ -1,0 +1,13 @@
+{
+  "name": "challange",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "@types/node": "^22.5.4"
+  },
+  "scripts": {
+    "run:docker": "PW_UID=\"$(id -u)\" PW_GID=\"$(id -g)\" docker compose up --build --force-recreate"
+  }
+}

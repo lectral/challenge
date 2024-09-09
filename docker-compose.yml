@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  playwright:
+    # image: mcr.microsoft.com/playwright:v1.47.0-noble
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    volumes:
+      - ./test-results:/workspace/test-results
+      - ./playwright-report/:/workspace/playwright-report/
+    environment:
+      - CI=true
+      - HEADLESS=true
+    tty: true
+    command: ["yarn", "playwright", "test"]
