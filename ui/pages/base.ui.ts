@@ -12,4 +12,8 @@ export class BaseUI {
   async goto(): Promise<void> {
     await this.page.goto(this.url);
   }
+
+  async pause(): Promise<void> {
+    await this.page.pause();
+  }
 }
